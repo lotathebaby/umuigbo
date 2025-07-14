@@ -92,6 +92,8 @@ const pastEvent = document.getElementById('past-event');
 const upcomingEvent = document.getElementById('upcoming-event');
 
 pastBtn.addEventListener('click', () => {
+  pastBtn.style.backgroundColor = 'red';
+  upcomingBtn.style.backgroundColor = 'white';
   pastEvent.classList.remove('hidden');
   pastEvent.classList.add('grid');
   upcomingEvent.classList.remove('grid');
@@ -99,6 +101,8 @@ pastBtn.addEventListener('click', () => {
 });
 
 upcomingBtn.addEventListener('click', () => {
+  upcomingBtn.style.backgroundColor = 'red';
+  pastBtn.style.backgroundColor = 'white';
   upcomingEvent.classList.remove('hidden');
   upcomingEvent.classList.add('grid');
   pastEvent.classList.remove('grid');
