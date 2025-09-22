@@ -3,476 +3,800 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/output.css" rel="stylesheet" />
+    <meta
+      name="description"
+      content="Umu Igbo Brandon Association - Preserving Igbo culture, values, and traditions in Brandon, Manitoba. Join our vibrant community today."
+    />
+    <meta
+      name="keywords"
+      content="Igbo, Brandon, Manitoba, Cultural Association, Community, Nigerian, Culture"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Umu Igbo Brandon Association" />
+    <meta
+      property="og:description"
+      content="Preserving Igbo culture, values, and traditions in Brandon, Manitoba"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://umuigbobrandon.com" />
+
+    <title>Umu Igbo Brandon - Preserving Culture, Building Community</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>Umuigbo Brandon</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Playfair Display', 'serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'igbo-red': '#dc2626',
+              'igbo-green': '#16a34a',
+              'igbo-gold': '#fbbf24',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-in-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'bounce-gentle': 'bounceGentle 2s infinite',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+
+      /* Carousel Styles */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-indicator.active {
+    background: white !important;
+}
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounceGentle {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          #dc2626 0%,
+          #b91c1c 50%,
+          #16a34a 100%
+        );
+      }
+
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-  <body>
-    <div class="max-w-full">
-      <header
-        class="flex md:flex-row items-center justify-between p-4 shadow-lg max-w-full w-full"
-      >
-        <div class="logo w-12">
-          <img
-            class="w-full"
-            src="umuigbo_photos/IMG_5DA37540C820-1.jpeg"
-            alt="umuigbo-logo"
-          />
+  <body class="font-body text-gray-900 scroll-smooth">
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-igbo-red text-white px-4 py-2 rounded-md z-50">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-40 transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full overflow-hidden">
+                        <img src="umuigbo_photos/IMG_5DA37540C820-1.jpeg" alt="Umu Igbo Brandon Logo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-display font-bold text-xl text-igbo-red">Umu Igbo Brandon</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block" role="navigation" aria-label="Main navigation">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Home</a></li>
+                        <li><a href="#events" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Events</a></li>
+                        <li><a href="#community" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Community</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Contact</a></li>
+                        <li><a href="#gallery" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Gallery</a></li>
+                        <li><a href="#support" class="text-gray-700 hover:text-igbo-red transition-colors duration-200 font-medium">Support</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-md text-gray-700 hover:text-igbo-red focus:outline-none focus:ring-2 focus:ring-igbo-red" 
+                        id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="sr-only">Open main menu</span>
+                    <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
 
-        <nav class="nav-bar" id="navBar">
-          <ul class="flex gap-4 md:gap-6">
-            <li><a href="#">Home</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#community">Community</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden fixed inset-0 bg-black/50 z-50 hidden" id="mobile-menu-overlay">
+            <div class="fixed right-0 top-0 h-full w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <span class="font-display font-bold text-lg text-igbo-red">Menu</span>
+                    <button class="p-2 rounded-md text-gray-700 hover:text-igbo-red" id="mobile-menu-close">
+                        <span class="sr-only">Close menu</span>
+                        <i class="fa-solid fa-times text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <nav class="p-4" role="navigation" aria-label="Mobile navigation">
+                    <ul class="space-y-4">
+                        <li><a href="#home" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Home</a></li>
+                        <li><a href="#events" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Events</a></li>
+                        <li><a href="#community" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Community</a></li>
+                        <li><a href="#contact" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Contact</a></li>
+                        <li><a href="#gallery" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Gallery</a></li>
+                        <li><a href="#support" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
       <!-- Picture Carousel -->
-      <div
-        id="hero-carousel"
-        class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-lg p-4"
-      >
-        <div id="carousel" class="relative w-full h-[400px] md:h-[500px]"></div>
+      <main id="main-content">
+        <!-- Hero Section with Carousel -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center hero-bg overflow-hidden">
+          <div class="absolute inset-0 bg-black/20"></div>
+          
+          <!-- Background Pattern -->
+          <div class="absolute inset-0 opacity-10">
+              <div class="absolute top-20 left-20 w-32 h-32 rounded-full bg-white animate-bounce-gentle"></div>
+              <div class="absolute bottom-20 right-20 w-24 h-24 rounded-full bg-white animate-bounce-gentle" style="animation-delay: 1s;"></div>
+              <div class="absolute top-1/2 left-10 w-16 h-16 rounded-full bg-white animate-bounce-gentle" style="animation-delay: 2s;"></div>
+          </div>
+
+          <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto animate-fade-in">
+              <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                  Umu Igbo Brandon
+              </h1>
+              <p class="text-xl md:text-2xl lg:text-3xl mb-8 font-light max-w-3xl mx-auto">
+                  Preserving Culture, Building Community
+              </p>
+              <p class="text-lg md:text-xl mb-12 opacity-90 max-w-2xl mx-auto">
+                  Join our vibrant Igbo community in Brandon, Manitoba, where tradition meets modern life
+              </p>
+              <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+                  <a href="#community" class="inline-block bg-igbo-gold hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      Join Our Community
+                  </a>
+                  <a href="#events" class="inline-block border-2 border-white text-white hover:bg-white hover:text-igbo-red font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105">
+                      Upcoming Events
+                  </a>
+              </div>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+              <i class="fa-solid fa-chevron-down text-2xl"></i>
+          </div>
+      </section>
+
+      <!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Community in Action</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">Celebrating our rich Igbo heritage and building lasting bonds through cultural events and community gatherings</p>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button class="gallery-filter active bg-red-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-red-700" data-filter="all">
+              All Photos
+          </button>
+          <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-300" data-filter="cultural">
+              Cultural Events
+          </button>
+          <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-300" data-filter="summer-event">
+              Summer Events
+          </button>
+          <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-300" data-filter="celebrations">
+              Celebrations
+          </button>
       </div>
 
-      <!-- Home page -->
-      <section id="home" class="shadow-md">
-        <div
-          class="flex justify-center md:mt-4 items-center md:my-2 mx-4 p-6 bg-red-500 text-white rounded-md shadow-lg"
-          id="slides"
-        >
-          <div class="slide">
-            <h3 class="heading text-lg font-extrabold text-center">
-              Our Vision
-            </h3>
-            <p class="hidden">
-              The vision of umu Igbo Brandon Association inc is to be a model
-              sociocultural association committed to promoting Igbo cultural
-              values, norms, heritage, language, tradition and language within
-              the city of Brandon, Manitoba.
-            </p>
-          </div>
+      <!-- Photo Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="photo-gallery">
+          <!-- Photos will be dynamically generated here -->
+      </div>
 
-          <div class="slide hidden">
-            <h3 class="heading text-lg font-extrabold text-center">
-              Our Mission
-            </h3>
-            <p class="hidden">
-              Rooted in the Igbo ethics of hardwork, integrity, mentorship,
-              respect for self and others, the mission of the Umu Igbo Brandon
-              Association Inc. is to achieve its vision through dedicated
-              cultural, educational, charitable, social, and exonomic programs
-              and activities.
-            </p>
-          </div>
+      <!-- Load More Button -->
+      <div class="text-center mt-12">
+          <button id="load-more" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <i class="fa-solid fa-images mr-2"></i>
+              Load More Photos
+          </button>
+      </div>
+  </div>
+</section>
 
-          <div class="slide hidden">
-            <h3 class="heading text-lg font-extrabold text-center">
-              Our Objectives
-            </h3>
-            <ul class="hidden list-disc list-inside">
-              <li>Promote Igbo Language, Values and Culture</li>
-              <li>
-                Advance the Igbo Community interests in the City of Brandon, the
-                province of Manitoba and Canada.
-              </li>
-              <li>Promote the Welfare of Members of Umu Igbo Brandon</li>
-              <li>
-                Assist new Igbo New-comers to settle seamlessly in Brandon
-              </li>
-              <li>
-                Promote cultural diversity and understanding through active
-                cooperation with other cultural associations in the city of
-                Brandon, Province of Manitoba and Canada
-              </li>
-              <li>
-                Undertake cultural, charitable, social and economic activities
-                beneficial to members and the society at large.
-              </li>
-            </ul>
-          </div>
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
+  <div class="relative max-w-7xl max-h-full p-4">
+      <!-- Close Button -->
+      <button id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+          <i class="fa-solid fa-times text-3xl"></i>
+      </button>
+      
+      <!-- Navigation Buttons -->
+      <button id="lightbox-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 text-4xl transition-colors">
+          <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button id="lightbox-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 text-4xl transition-colors">
+          <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      
+      <!-- Image Container -->
+      <div class="text-center">
+          <img id="lightbox-image" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" src="" alt="">
+          <div id="lightbox-caption" class="text-white mt-4 text-lg"></div>
+          <div id="lightbox-counter" class="text-gray-300 mt-2 text-sm"></div>
+      </div>
+  </div>
+</div>
+      
+      <!-- Mission, Vision, Objectives -->
+      <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Foundation</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Built on the pillars of culture, community, and progress</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Vision Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-igbo-red to-red-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa-solid fa-eye text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-center mb-4 text-gray-900">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed text-center">
+                            To be a model sociocultural association committed to promoting Igbo cultural values, norms, heritage, language, and traditions within Brandon, Manitoba.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-igbo-green to-green-600 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa-solid fa-compass text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-center mb-4 text-gray-900">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed text-center">
+                            Rooted in Igbo ethics of hard work, integrity, mentorship, and respect, we achieve our vision through dedicated cultural, educational, charitable, social, and economic programs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Objectives Card -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-slide-up md:col-span-1" style="animation-delay: 0.4s;">
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-gradient-to-br from-igbo-gold to-yellow-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa-solid fa-target text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-center mb-4 text-gray-900">Our Objectives</h3>
+                        <div class="text-gray-600 leading-relaxed space-y-2 text-sm">
+                            <p>• Promote Igbo Language, Values and Culture</p>
+                            <p>• Advance community interests in Brandon and Manitoba</p>
+                            <p>• Promote member welfare and support</p>
+                            <p>• Assist new Igbo newcomers in settling</p>
+                            <p>• Foster cultural diversity and cooperation</p>
+                            <p>• Organize beneficial community activities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
       <!-- events page -->
-      <section id="events" class="events">
-        <div class="flex p-6 gap-6 items-center justify-center">
-          <button
-            class="rounded-md shadow-md p-4 text-black focus:bg-red-500 focus:text-white font-extrabold"
-            data-tab="upcoming"
-            id="upcoming"
-          >
-            Upcoming Events
-          </button>
-          <button
-            class="tab-button rounded-md shadow-md text-black p-4 focus:bg-red-500 focus:text-white font-extrabold"
-            data-tab="past"
-            id="past"
-          >
-            Past Events
-          </button>
+      <section id="events" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Community Events</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Join us in celebrating our rich culture and building lasting connections</p>
+            </div>
+
+            <!-- Event Tabs -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-gray-100 rounded-full p-1">
+                    <button class="event-tab-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 bg-igbo-red text-white" data-tab="upcoming">
+                        Upcoming Events
+                    </button>
+                    <button class="event-tab-btn px-6 py-3 rounded-full font-semibold transition-all duration-300 text-gray-600 hover:text-gray-900" data-tab="past">
+                        Past Events
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div id="upcoming-events" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Event Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-igbo-red to-igbo-green relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="calabash-removebg-preview.png" class="w-24 h-24 opacity-80" alt="Cultural symbol">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">General Igbo Meeting</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">July 20, 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Join us at our bi-monthly general meeting to discuss organizational progress and community initiatives.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-igbo-green to-igbo-red relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="calabash-removebg-preview.png" class="w-24 h-24 opacity-80" alt="Cultural symbol">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">General Igbo Meeting</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">September 17, 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Join us at our bi-monthly general meeting to discuss organizational progress and community initiatives.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-igbo-gold to-igbo-red relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="calabash-removebg-preview.png" class="w-24 h-24 opacity-80" alt="Cultural symbol">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">Thanksgiving Sunday</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">October 13, 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Join us to celebrate God's goodness and guidance on this special thanksgiving service.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Event Card 4 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-igbo-green to-igbo-gold relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="calabash-removebg-preview.png" class="w-24 h-24 opacity-80" alt="Cultural symbol">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">Christmas End of Year Party</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">December 20, 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Celebrate the year's end with rich food, music, and cultural festivities in grand style.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Photo Cards -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <img src="umuigbo_photos/IMG_5907.jpg" class="w-full h-80 object-cover" alt="Community cultural event">
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <img src="umuigbo_photos/IMG_5910.jpg" class="w-full h-80 object-cover" alt="Community cultural event">
+                </div>
+            </div>
+
+            <!-- Past Events -->
+            <div id="past-events" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <img src="umuigbo_photos/IMG_5909.jpg" class="w-full h-48 object-cover" alt="Past community event">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">Cultural Day Celebration</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">March 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-igbo-red to-igbo-green relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="calabash-removebg-preview.png" class="w-24 h-24 opacity-80" alt="Cultural symbol">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-3 text-gray-900">Christmas End of Year Party</h3>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fa-solid fa-calendar-days text-igbo-red mr-2"></i>
+                            <span class="font-medium">December 14, 2024</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Celebrated the year's end with rich food, music, and cultural festivities.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="event-content">
-          <div
-            class="gap-4 grid mx-auto justify-center items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'"
-            id="upcoming-event"
-          >
-            <div class="event-card mx-auto">
-              <img src="umuigbo_photos/IMG_5907.jpg" class="w-64 h-96" />
+    </section>
+      <!-- Community Registration -->
+      <section id="community" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Join Our Community</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Are you Igbo? Do you live in Brandon? Become part of our vibrant community and enjoy numerous benefits.</p>
             </div>
 
-            <div class="event-card mx-auto">
-              <img src="umuigbo_photos/IMG_5910.jpg" class="w-64 h-96" />
-            </div>
+            <div class="max-w-2xl mx-auto">
+                <form action="https://formspree.io/f/mzzvpqvz" method="POST" accept-charset="UTF-8" id="registration-form" 
+                      class="bg-white rounded-2xl shadow-xl p-8 space-y-6" novalidate>
+                    <!-- Progress Indicator -->
+                    <div class="mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 bg-igbo-red text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                                <span class="text-sm font-medium text-gray-900">Personal Info</span>
+                            </div>
+                            <div class="flex-1 h-1 mx-4 bg-gray-200 rounded">
+                                <div class="h-1 bg-igbo-red rounded transition-all duration-300" id="progress-bar" style="width: 33.33%"></div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                                <span class="text-sm font-medium text-gray-600">Background</span>
+                            </div>
+                            <div class="flex-1 h-1 mx-4 bg-gray-200 rounded"></div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-8 h-8 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                                <span class="text-sm font-medium text-gray-600">Family</span>
+                            </div>
+                        </div>
+                    </div>
 
-            <div
-              class="event-card w-64 h-96 bg-gradient-to-br from-red-500 to-green-500 mx-auto rounded-md shadow-md p-12 text-center"
-            >
-              <h3>General Igbo Meeting</h3>
-              <img
-                src="calabash-removebg-preview.png"
-                class="w-24 mx-auto"
-                alt="calabash"
-              />
-              <p><i class="fa-solid fa-calendar-days"></i> July 20, 2025</p>
-              <p>
-                Join us at our bi-monthly general meeting to discuss the
-                progress of the organization
-              </p>
-            </div>
+                    <!-- Step 1: Personal Information -->
+                    <div id="step-1" class="form-step space-y-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name (Last Name, First Name)*</label>
+                                <input id="name" type="text" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your full name">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
 
-            <div
-              class="event-card w-64 h-96 mx-auto bg-gradient-to-br from-red-500 to-green-500 rounded-md shadow-lg p-12 text-center"
-            >
-              <h3>Thanksgiving Sunday</h3>
-              <img
-                src="calabash-removebg-preview.png"
-                class="w-24 mx-auto"
-                alt="calabash"
-              />
-              <p><i class="fa-solid fa-calendar-days"></i> October 13, 2025</p>
-              <p>
-                Join us to celebrate God's goodness and guidance on thanksgiving
-                sunday
-              </p>
-            </div>
+                            <div>
+                                <label for="bday" class="block text-sm font-semibold text-gray-700 mb-2">Date of Birth*</label>
+                                <input id="bday" type="date" name="date" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
 
-            <div
-              class="event-card w-64 h-96 mx-auto bg-gradient-to-br from-red-500 to-green-500 rounded-md shadow-md p-12 text-center"
-            >
-              <h3>General Igbo meeting</h3>
-              <img
-                src="calabash-removebg-preview.png"
-                class="w-24 mx-auto"
-                alt="calabash"
-              />
-              <p>
-                <i class="fa-solid fa-calendar-days"></i> September 17, 2025
-              </p>
-              <p>
-                Join us at our bi-monthly general meeting to discuss the
-                progress of the organization
-              </p>
-            </div>
+                            <div>
+                                <label for="address" class="block text-sm font-semibold text-gray-700 mb-2">Address*</label>
+                                <input id="address" type="text" name="address" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your address">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
 
-            <div
-              class="event-card w-64 h-96 bg-gradient-to-br from-red-500 to-green-500 mx-auto rounded-md shadow-md p-12 text-center"
-            >
-              <h3>Christmas End of Year Party</h3>
-              <img
-                src="calabash-removebg-preview.png"
-                class="w-24 mx-auto"
-                alt="calabash"
-              />
-              <p><i class="fa-solid fa-calendar-days"></i> December 20, 2025</p>
-              <p>
-                Celebrate the end of the year with us in grand style with rich
-                food, music, celebration, and culture.
-              </p>
-            </div>
-          </div>
+                            <div>
+                                <label for="number" class="block text-sm font-semibold text-gray-700 mb-2">WhatsApp Number*</label>
+                                <input id="number" type="tel" name="number" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="+1 (204) 123-4567">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
 
-          <div
-            class="gap-4 hidden mx-auto justify-center items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'"
-            id="past-event"
-          >
-            <div class="event-card mx-auto">
-              <img src="umuigbo_photos/IMG_5909.jpg" class="w-64 h-96" />
-            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address*</label>
+                                <input id="email" type="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your email address">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
 
-            <div
-              class="event-card w-64 h-96 mx-auto bg-gradient-to-br from-red-500 to-green-500 rounded-md shadow-md p-12 text-center"
-            >
-              <h3>Christmas End of Year Party</h3>
-              <img
-                src="calabash-removebg-preview.png"
-                alt="calabash"
-                class="w-24 mx-auto"
-              />
-              <p><i class="fa-solid fa-calendar-days"></i> December 14, 2024</p>
-              <p>
-                Celebrate the end of the year with us in grand style with rich
-                food, music, celebration,
-              </p>
+                        <div class="flex justify-end">
+                            <button type="button" class="next-btn bg-igbo-green hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 transform hover:scale-105">
+                                Next Step
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Background Information -->
+                    <div id="step-2" class="form-step hidden space-y-6">
+                        <div class="space-y-4">
+                            <fieldset class="space-y-3">
+                                <legend class="text-sm font-semibold text-gray-700 mb-3">Marital Status*</legend>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="marital-status" value="married" class="text-igbo-red focus:ring-igbo-red">
+                                        <span class="ml-2 text-gray-700">Married</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="marital-status" value="single" class="text-igbo-red focus:ring-igbo-red">
+                                        <span class="ml-2 text-gray-700">Single</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="marital-status" value="other" class="text-igbo-red focus:ring-igbo-red">
+                                        <span class="ml-2 text-gray-700">Other</span>
+                                    </label>
+                                </div>
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </fieldset>
+
+                            <div>
+                                <label for="state" class="block text-sm font-semibold text-gray-700 mb-2">State of Origin*</label>
+                                <input id="state" type="text" name="state" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your state of origin">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+
+                            <div>
+                                <label for="lga" class="block text-sm font-semibold text-gray-700 mb-2">Local Government Area*</label>
+                                <input id="lga" type="text" name="lga" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your LGA">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+
+                            <div>
+                                <label for="occupation" class="block text-sm font-semibold text-gray-700 mb-2">Occupation*</label>
+                                <input id="occupation" type="text" name="occupation" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter your occupation">
+                                <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <button type="button" class="prev-btn bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+                                Previous
+                            </button>
+                            <button type="button" class="next-btn bg-igbo-green hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 transform hover:scale-105">
+                                Next Step
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Family Information -->
+                    <div id="step-3" class="form-step hidden space-y-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="spouse" class="block text-sm font-semibold text-gray-700 mb-2">Spouse Name</label>
+                                <input id="spouse" type="text" name="spouse" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="Enter spouse's name (if applicable)">
+                            </div>
+
+                            <div>
+                                <label for="spouse-number" class="block text-sm font-semibold text-gray-700 mb-2">Spouse's Phone Number</label>
+                                <input id="spouse-number" type="tel" name="spouse-number" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-igbo-red focus:border-transparent transition-all duration-200"
+                                       placeholder="+1 (204) 123-4567">
+                            </div>
+
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <i class="fa-solid fa-info-circle text-igbo-red mr-2"></i>
+                                    By submitting this form, you agree to become a member of Umu Igbo Brandon Association and participate in our community activities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <button type="button" class="prev-btn bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+                                Previous
+                            </button>
+                            <button type="submit" class="submit-btn bg-igbo-red hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 transform hover:scale-105">
+                                <i class="fa-solid fa-paper-plane mr-2"></i>
+                                Submit Registration
+                            </button>
+                        </div>
+
+                        <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <section id="community" class="community mt-8">
-        <h2 class="text-center text-2xl font-extrabold">
-          Community Registration
-        </h2>
-        <p class="text-center mb-4 text-sm">
-          Are you igbo? Do you live in Brandon? Join our vibrant community and
-          enjoy numerous benefits.
-        </p>
-        <form
-          action="https://formspree.io/f/mzzvpqvz"
-          method="POST"
-          accept-charset="UTF-8"
-          id="form"
-          class="flex flex-col w-80 gap-4 mx-auto rounded-lg shadow-lg text-sm p-8"
-        >
-          <div id="step-1" class="step block">
-            <label for="name">Full Name (Last Name, First Name)</label>
-            <input
-              id="name"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="name"
-              required
-            />
-            <label for="bday">Date of Birth (Month and Day)</label>
-            <input
-              id="bday"
-              type="date"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="date"
-              required
-            />
-            <label for="address">Address</label>
-            <input
-              id="address"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="address"
-              required
-            />
-            <label for="number">WhatsApp Number</label>
-            <input
-              id="number"
-              type="number"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="number"
-              required
-            />
-            <label for="email">Email Address</label>
-            <input
-              id="email"
-              type="email"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="email"
-              required
-            />
-            <div class="form-btn flex justify-end mt-4">
-              <button class="next bg-green-500 text-white p-2 rounded-md">
-                Next
-              </button>
-            </div>
-          </div>
-
-          <div id="step-2" class="step hidden">
-            <fieldset>
-              <legend>Marital Status</legend>
-              <div>
-                <input
-                  id="married"
-                  type="radio"
-                  name="marital-status"
-                  value="married"
-                />
-                <label for="married">Married</label>
+        <!-- Support/Donations Section -->
+        <section id="donations" class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                  <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-4">Support Our Community</h2>
+                  <p class="text-xl text-gray-600 max-w-2xl mx-auto">Your generous donations help us preserve our culture and support our members</p>
               </div>
-              <div>
-                <input
-                  id="single"
-                  type="radio"
-                  name="marital-status"
-                  value="single"
-                />
-                <label for="single">Single</label>
+
+              <div class="max-w-2xl mx-auto">
+                  <div class="bg-gradient-to-br from-igbo-red to-igbo-green rounded-2xl shadow-xl p-8 text-white">
+                      <div class="text-center mb-8">
+                          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <i class="fa-solid fa-heart text-3xl"></i>
+                          </div>
+                          <h3 class="font-display text-2xl font-bold mb-2">Make a Donation</h3>
+                          <p class="opacity-90">Support our community initiatives and cultural programs</p>
+                      </div>
+
+                      <div class="space-y-4 text-center">
+                          <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                              <h4 class="font-semibold mb-2">Interac e-Transfer</h4>
+                              <p class="text-sm opacity-90 mb-2">Send your donations to:</p>
+                              <a href="mailto:umuigbobrandon@gmail.com" class="text-igbo-gold font-semibold hover:underline">
+                                  umuigbobrandon@gmail.com
+                              </a>
+                          </div>
+
+                          <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                              <h4 class="font-semibold mb-2">Bank Transfer</h4>
+                              <div class="space-y-1 text-sm">
+                                  <p><strong>Account Name:</strong> UMU IGBO BRANDON ASSOCIATION INC.</p>
+                                  <p><strong>Bank:</strong> WESTOBA CREDIT UNION</p>
+                                  <p><strong>Account Number:</strong> 20278719</p>
+                              </div>
+                          </div>
+
+                          <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                              <p class="text-sm opacity-90">
+                                  <i class="fa-solid fa-info-circle mr-2"></i>
+                                  Please include your full name and purpose (e.g., "Membership 2025" or "Event Donation") in the transfer message.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <div>
-                <input
-                  id="other"
-                  type="radio"
-                  name="marital-status"
-                  value="other"
-                />
-                <label for="other">Other</label>
+          </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-gray-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                  <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                  <p class="text-xl text-gray-300 max-w-2xl mx-auto">Questions or concerns? We're here to help and connect with you</p>
               </div>
-            </fieldset>
-            <label for="state">State of Origin</label>
-            <input
-              id="state"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="state"
-              required
-            />
-            <label for="lga">Local Government Area</label>
-            <input
-              id="lga"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="lga"
-              required
-            />
-            <label for="occupation">Occupation</label>
-            <input
-              id="occupation"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="occupation"
-              required
-            />
-            <div class="form-btn flex justify-center m-4 gap-4">
-              <button class="prev bg-green-500 text-white p-2 rounded-md">
-                Previous
-              </button>
-              <button class="next bg-green-500 text-white p-2 rounded-md">
-                Next
-              </button>
-            </div>
+
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                  <div class="text-center">
+                      <div class="w-16 h-16 bg-igbo-red rounded-full flex items-center justify-center mx-auto mb-4">
+                          <i class="fa-solid fa-phone text-2xl"></i>
+                      </div>
+                      <h3 class="font-semibold text-lg mb-2">Call or Text</h3>
+                      <a href="tel:+12045551234" class="text-igbo-gold hover:underline">+1 (204) 555-1234</a>
+                  </div>
+
+                  <div class="text-center">
+                      <div class="w-16 h-16 bg-igbo-green rounded-full flex items-center justify-center mx-auto mb-4">
+                          <i class="fa-solid fa-envelope text-2xl"></i>
+                      </div>
+                      <h3 class="font-semibold text-lg mb-2">Email Us</h3>
+                      <a href="mailto:umuigbobrandon@gmail.com" class="text-igbo-gold hover:underline">umuigbobrandon@gmail.com</a>
+                  </div>
+
+                  <div class="text-center md:col-span-2 lg:col-span-1">
+                      <div class="w-16 h-16 bg-igbo-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                          <i class="fa-solid fa-map-marker-alt text-2xl text-gray-900"></i>
+                      </div>
+                      <h3 class="font-semibold text-lg mb-2">Location</h3>
+                      <p class="text-gray-300">Brandon, Manitoba, Canada</p>
+                  </div>
+              </div>
+
+              <div class="text-center">
+                  <h3 class="font-display text-2xl font-bold mb-6">Follow Us</h3>
+                  <div class="flex justify-center space-x-6">
+                      <a href="https://facebook.com/umuigbobrandon" target="_blank" rel="noopener noreferrer" 
+                         class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+                         aria-label="Follow us on Facebook">
+                          <i class="fa-brands fa-facebook-f text-xl"></i>
+                      </a>
+                      <a href="https://instagram.com/umuigbobrandon" target="_blank" rel="noopener noreferrer"
+                         class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors duration-200"
+                         aria-label="Follow us on Instagram">
+                          <i class="fa-brands fa-instagram text-xl"></i>
+                      </a>
+                      <a href="https://x.com/umuigbobrandon" target="_blank" rel="noopener noreferrer"
+                         class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+                         aria-label="Follow us on Twitter">
+                          <i class="fa-brands fa-x-twitter text-xl"></i>
+                      </a>
+                  </div>
+              </div>
           </div>
-
-          <div id="step-3" class="step hidden">
-            <label for="spouse">Spouse</label>
-            <input
-              id="spouse"
-              type="text"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="spouse"
-            />
-            <label for="number">Spouse's Number</label>
-            <input
-              id="spouse-number"
-              type="number"
-              class="input w-full shadow-md p-2 rounded-lg border-1"
-              name="number"
-            />
-            <div class="form-btn flex justify-center m-4 gap-4">
-              <button class="prev bg-green-500 text-white p-2 rounded-md">
-                Previous
-              </button>
-              <button
-                id="submit"
-                class="submit bg-green-500 text-white p-2 rounded-md"
-              >
-                Submit
-              </button>
-            </div>
-            <input
-              type="hidden"
-              name="_redirect"
-              value="https://yourwebsite.com/thank-you.html"
-            />
+      </section>
+      </main>
+      <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center text-gray-400">
+              <p>&copy; 2025 Umu Igbo Brandon Association Inc. All rights reserved.</p>
+              <p class="mt-2 text-sm">Preserving culture, building community in Brandon, Manitoba</p>
           </div>
-        </form>
-      </section>
-
-      <section id="donations" class="donations m-8">
-        <h2 class="text-center text-2xl font-extrabold mb-4">
-          Support Our Community
-        </h2>
-        <div
-          class="support w-72 mx-auto shadow-lg p-6 text-sm bg-gradient-to-br from-red-500 to-green-500 rounded-md"
-        >
-          <p>
-            You can send your donations or membership payments via Interac
-            e-Transfer to:
-          </p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:umuigbobrandon@gmail.com"
-              >umuigbobrandon@gmail.com</a
-            >
-          </p>
-          <p>
-            <strong>ACCOUNT NAME:</strong> UMU IGBO BRANDON ASSOCIATION INC.
-          </p>
-          <p><strong>BANK:</strong> WESTOBA CREDIT UNION</p>
-          <p>ACCOUNT NUMBER: 20278719</p>
-          <p class="m-4">
-            Include your full name and purpose (e.g., “Membership 2025” or
-            “Event Donation”) in the message.
-          </p>
-          <p>Thank you for your generous support!</p>
-        </div>
-      </section>
-
-      <section
-        class="contact-section w-full shadow-lg bg-gradient-to-br from-red-500 to-green-500"
-        id="contact"
-      >
-        <h2>Questions or Concerns?</h2>
-
-        <p>
-          If you have any questions, feel free to reach out. We're here to help!
-        </p>
-
-        <div
-          class="contact-info flex flex-col justify-center md:gap-4 mx-auto items-center md:flex-row"
-        >
-          <p>
-            <i class="fa-solid fa-phone"></i> Call or text:
-            <a href="tel:+12045551234">+1 (204) 555-1234</a>
-          </p>
-          <p>
-            <i class="fa-solid fa-envelope"></i> Email:
-            <a href="mailto:umuigbobrandon@gmail.com"
-              >umuigbobrandon@gmail.com</a
-            >
-          </p>
-        </div>
-
-        <div class="social-links flex justify-center gap-4">
-          <a
-            href="https://facebook.com/umuigbobrandon"
-            target="_blank"
-            title="Facebook"
-          >
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://instagram.com/umuigbobrandon"
-            target="_blank"
-            title="Instagram"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
-            href="https://x.com/umuigbobrandon"
-            target="_blank"
-            title="Twitter"
-          >
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        </div>
-      </section>
+      </div>
+  </footer>
     </div>
     <script src="index.js"></script>
   </body>
