@@ -37,61 +37,61 @@ document.querySelectorAll('#mobile-menu a[href^="#"]').forEach((link) => {
 const communityPhotos = [
   {
     src: 'umuigbo_photos/DSC04747.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC04752.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC04840.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC04853.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC04910.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC04964.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC05056.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC05152.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC05267.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
   {
     src: 'umuigbo_photos/DSC05360.jpg',
-    caption: 'Cultural Day Celebration - Traditional Dance Performance',
+    caption: 'Cultural Day Celebration 2025',
     category: 'cultural',
     date: '2024-03-15',
   },
@@ -233,7 +233,7 @@ class PhotoGallery {
     this.photos = communityPhotos;
     this.filteredPhotos = [...this.photos];
     this.currentFilter = 'all';
-    this.photosPerLoad = 8;
+    this.photosPerLoad = 4;
     this.currentlyShown = 0;
     this.currentLightboxIndex = 0;
 

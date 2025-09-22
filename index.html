@@ -138,7 +138,7 @@
       }
     </style>
   </head>
-  <body class="font-body text-gray-900 scroll-smooth">
+  <body class="font-body text-gray-900 scroll-smooth overflow-x-hidden">
     <!-- Skip Navigation Link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-igbo-red text-white px-4 py-2 rounded-md z-50">
         Skip to main content
@@ -178,27 +178,29 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="md:hidden fixed inset-0 bg-black/50 z-50 hidden" id="mobile-menu-overlay">
-            <div class="fixed right-0 top-0 h-full w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu">
-                <div class="flex items-center justify-between p-4 border-b">
-                    <span class="font-display font-bold text-lg text-igbo-red">Menu</span>
-                    <button class="p-2 rounded-md text-gray-700 hover:text-igbo-red" id="mobile-menu-close">
-                        <span class="sr-only">Close menu</span>
-                        <i class="fa-solid fa-times text-xl" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <nav class="p-4" role="navigation" aria-label="Mobile navigation">
-                    <ul class="space-y-4">
-                        <li><a href="#home" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Home</a></li>
-                        <li><a href="#events" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Events</a></li>
-                        <li><a href="#community" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Community</a></li>
-                        <li><a href="#contact" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Contact</a></li>
-                        <li><a href="#gallery" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Gallery</a></li>
-                        <li><a href="#support" class="block py-2 text-gray-700 hover:text-igbo-red transition-colors">Support</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+<div class="md:hidden fixed inset-0 bg-black/50 z-50 hidden" id="mobile-menu-overlay">
+  <!-- Slide-in Menu -->
+  <div class="fixed right-0 top-0 h-full w-64 bg-gray-900 shadow-xl transform translate-x-full transition-transform duration-300" id="mobile-menu">
+    <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <span class="font-display font-bold text-lg text-white">Menu</span>
+      <button class="p-2 rounded-md text-gray-300 hover:text-igbo-red" id="mobile-menu-close">
+        <span class="sr-only">Close menu</span>
+        <i class="fa-solid fa-times text-xl" aria-hidden="true"></i>
+      </button>
+    </div>
+    <nav class="p-4" role="navigation" aria-label="Mobile navigation">
+      <ul class="space-y-4">
+        <li><a href="#home" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Home</a></li>
+        <li><a href="#events" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Events</a></li>
+        <li><a href="#community" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Community</a></li>
+        <li><a href="#contact" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Contact</a></li>
+        <li><a href="#gallery" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Gallery</a></li>
+        <li><a href="#support" class="block py-2 text-gray-800 font-extrabold hover:text-igbo-red transition-colors">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
     </header>
 
       <!-- Picture Carousel -->
